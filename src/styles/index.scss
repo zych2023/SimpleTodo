@@ -1,0 +1,105 @@
+:root {
+  --app-bg: rgba(0, 0, 0, 0.6);
+  --app-border-color: rgba(255, 255, 255, 0.12);
+  --app-blur: 0px;
+  --app-saturate: 100%;
+  --acrylic-tint-rgb: 56, 76, 96;
+  --text-primary: #ffffff;
+  --text-secondary: #cccccc;
+  --text-muted: rgba(255, 255, 255, 0.3);
+  --text-hover: rgba(255, 255, 255, 0.6);
+  --selection-bg: rgba(255, 255, 255, 0.3);
+  --scroll-thumb: rgba(255, 255, 255, 0.2);
+  --group-title: rgba(204, 204, 204, 0.8);
+}
+
+:root[data-theme="light"] {
+  --app-bg: rgba(248, 250, 252, 0.8);
+  --app-border-color: rgba(255, 255, 255, 0.24);
+  --app-blur: 0px;
+  --app-saturate: 100%;
+  --text-primary: #1f2937;
+  --text-secondary: #4b5563;
+  --text-muted: rgba(75, 85, 99, 0.6);
+  --text-hover: rgba(17, 24, 39, 0.75);
+  --selection-bg: rgba(59, 130, 246, 0.24);
+  --scroll-thumb: rgba(75, 85, 99, 0.3);
+  --group-title: rgba(107, 114, 128, 0.75);
+}
+
+:root[data-theme="wallpaper"] {
+  --app-bg: rgba(var(--acrylic-tint-rgb), 0.12);
+  --app-border-color: rgba(255, 255, 255, 0.22);
+  --app-blur: 72px;
+  --app-saturate: 94%;
+  --text-primary: var(--wallpaper-text-primary, #f8fafc);
+  --text-secondary: var(--wallpaper-text-secondary, #e2e8f0);
+  --text-muted: var(--wallpaper-text-muted, rgba(226, 232, 240, 0.54));
+  --text-hover: var(--wallpaper-text-hover, rgba(248, 250, 252, 0.84));
+  --selection-bg: var(--wallpaper-selection-bg, rgba(255, 255, 255, 0.2));
+  --scroll-thumb: var(--wallpaper-scroll-thumb, rgba(241, 245, 249, 0.26));
+  --group-title: var(--wallpaper-group-title, rgba(226, 232, 240, 0.72));
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  overflow: hidden;
+}
+* {
+  padding: 0;
+  margin: 0;
+  color: var(--text-primary);
+}
+*::selection {
+  background: var(--selection-bg);
+}
+
+.scrollbar-x::-webkit-scrollbar {
+  /*滚动条整体样式*/
+  width: 1px; /*高宽分别对应横竖滚动条的尺寸*/
+  height: 5px;
+}
+.scrollbar-y::-webkit-scrollbar {
+  /*滚动条整体样式*/
+  width: 5px; /*高宽分别对应横竖滚动条的尺寸*/
+  height: 1px;
+}
+.scrollbar::-webkit-scrollbar-thumb {
+  /*滚动条里面小方块*/
+  display: none;
+  border-radius: 5px;
+  background-color: var(--scroll-thumb);
+}
+.scrollbar::-webkit-scrollbar-track {
+  display: none;
+}
+
+/* fade */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.28s;
+}
+
+.fade-enter,
+.fade-leave-active {
+  opacity: 0;
+}
+
+/* fade-transform */
+.fade-transform-leave-active,
+.fade-transform-enter-active {
+  transition: all 0.28s;
+}
+
+.fade-transform-enter {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.fade-transform-leave-to {
+  opacity: 0;
+  transform: translateY(-30px);
+}
