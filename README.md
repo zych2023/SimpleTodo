@@ -1,83 +1,22 @@
-# SimpleTodo
+# 轻简待办 | 美化增强版
 
-:sparkles:一个使用 electron + vue + electron-builder 开发的跨平台 todolist（便签）桌面应用
+## 原作者与原仓库（置顶）
+- 原作者：xiajingren
+- 原仓库：https://github.com/xiajingren/xhznl-todo-list
 
-原作者：xiajingren  
-原项目地址：https://github.com/xiajingren/xhznl-todo-list.git  
-作者2：zych2023  
-新项目地址：https://github.com/zych2023/SimpleTodo.git
+## 项目说明
+基于原项目的个人二次开发版本，主要做了界面美化与体验增强，仅用于学习和个人使用。
 
-## 相关技术
+## 功能简述
+1. 待办与完成清单管理，数据本地保存。
+2. 三种主题切换：浅色 / 深色 / 亚克力透明。
+3. 支持窗口置顶、托盘后台运行与快速唤起。
+4. 支持自定义顶部文案（座右铭）与应用名称展示。
 
-[electron 9.x](https://github.com/electron/electron)
+## 技术栈
+Electron + Vue
 
-[vue 2.x](https://github.com/vuejs/vue)
-
-[vue-cli-plugin-electron-builder](https://github.com/nklayman/vue-cli-plugin-electron-builder)
-
-[electron-builder](https://github.com/electron-userland/electron-builder)
-
-[lowdb](https://github.com/typicode/lowdb)
-
-[exceljs](https://github.com/exceljs/exceljs)
-
-[dayjs](https://github.com/iamkun/dayjs)
-
-[Vue.Draggable](https://github.com/SortableJS/Vue.Draggable)
-
-......
-
-## 功能预览
-
-![todo list](/resources/1.png)
-
-![done list](/resources/2.png)
-
-![基本操作](/resources/3.gif)
-
-![数据导出](/resources/4.gif)
-
-![鼠标穿透](/resources/5.gif)
-
-![macOS](/resources/6.png)
-
-## 启动与打包（Windows）
-
-1. 安装依赖（网络不稳定时建议使用镜像）
-
-```powershell
-$env:ELECTRON_MIRROR="https://npmmirror.com/mirrors/electron/"
-npm run deps:install:mirror
-```
-
-2. 启动开发模式
-
-```powershell
-npm run electron:serve
-```
-
-3. 生成 Windows 可执行安装包（x64）
-
-```powershell
-npm run electron:build:win
-```
-
-4. 产物位置
-
-打包后输出目录为 `release/`，常见产物：
-
-- `release/SimpleTodo-<version>-win-x64.exe`（安装包）
-- `release/win-unpacked/`（免安装目录）
-
-下载 releases：https://github.com/zych2023/SimpleTodo/releases
-
-## 规划
-
-- [x] todo/done 基本功能
-- [x] 本地数据库存储
-- [x] 软件自动更新
-- [x] 数据导出为 excel
-- [x] 开机启动
-- [x] 鼠标穿透
-- [ ] 窗口贴边自动收起
-- [ ] ......
+## 使用方式
+1. 下载 Release 安装包并安装运行。
+2. 启动后可在右上角切换主题、设置窗口行为。
+3. 通过托盘菜单可查看关于信息、打开项目地址与反馈入口。

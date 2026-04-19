@@ -24,3 +24,11 @@ pnpm-debug.log*
 
 #Electron-builder output
 /dist_electron
+/release
+
+# OS generated files
+node_modules/
+dist/
+build/
+release/
+*.exe
