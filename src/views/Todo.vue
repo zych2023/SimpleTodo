@@ -74,7 +74,6 @@ export default {
       const index = this.todoList.length - 1;
       this.tempItem = Object.assign({}, this.todoList[index]);
       this.editIndex = index;
-      //this.editing(index);
     },
     editing(index) {
       setTimeout(() => {

@@ -1,5 +1,6 @@
 # 轻简待办 | 美化增强版
 简洁好用的桌面待办清单工具，基于开源项目+AI二次修改优化。
+⚠️ 未对macOS进行测试，可能存在错误以及未知bug.
 
 ## 原项目说明
 本项目基于 [xiajingren/xhznl-todo-list](https://github.com/xiajingren/xhznl-todo-list) 二次开发美化

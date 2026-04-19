@@ -93,18 +93,6 @@ class Boom {
 }
 
 class CursorSpecialEffects {
-  constructor() {
-    // this.computerCanvas = document.createElement("canvas");
-    // this.renderCanvas = document.createElement("canvas");
-    // this.computerContext = this.computerCanvas.getContext("2d");
-    // this.renderContext = this.renderCanvas.getContext("2d");
-    // this.globalWidth = window.innerWidth;
-    // this.globalHeight = window.innerHeight;
-    // this.booms = [];
-    // this.running = false;
-    // this.init();
-  }
-
   reset() {
     if (this.renderCanvas) document.body.removeChild(this.renderCanvas);
 
@@ -139,11 +127,6 @@ class CursorSpecialEffects {
     this.running || this.run();
   }
 
-  handlePageHide() {
-    this.booms = [];
-    this.running = false;
-  }
-
   init() {
     const style = this.renderCanvas.style;
     style.position = "fixed";
@@ -155,9 +138,6 @@ class CursorSpecialEffects {
     style.height = this.renderCanvas.height = this.computerCanvas.height = this.globalHeight;
 
     document.body.append(this.renderCanvas);
-
-    //window.addEventListener("mousedown", this.handleMouseDown.bind(this));
-    //window.addEventListener("pagehide", this.handlePageHide.bind(this));
   }
 
   run() {

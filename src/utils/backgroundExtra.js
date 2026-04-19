@@ -210,7 +210,7 @@ function exportData() {
     });
 }
 
-export function showNotification(option, clickCallback) {
+function showNotification(option, clickCallback) {
   if (Notification.isSupported()) {
     const notification = new Notification(option);
     if (clickCallback) {
