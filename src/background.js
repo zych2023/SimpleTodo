@@ -167,7 +167,7 @@ async function createWindow() {
     ...(process.platform === "win32" ? {} : { type: "toolbar" }),
     frame: false,
     //resizable: false,
-    title: pkg.name,
+    title: pkg.displayName || pkg.name,
     minimizable: false,
     maximizable: false,
     skipTaskbar: true,

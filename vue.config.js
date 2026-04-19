@@ -17,6 +17,7 @@ module.exports = {
         },
         win: {
           icon: "./public/logo.ico",
+          executableName: "SimpleTodo",
           target: [
             {
               target: "nsis",
@@ -27,6 +28,7 @@ module.exports = {
         nsis: {
           oneClick: false,
           allowToChangeInstallationDirectory: true,
+          uninstallDisplayName: "SimpleTodo",
           shortcutName: "SimpleTodo"
         },
         dmg: {
