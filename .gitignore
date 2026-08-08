@@ -1,7 +1,10 @@
 .DS_Store
 node_modules
 /dist
+/out
 
+# TypeScript incremental build info
+*.tsbuildinfo
 
 # local env files
 .env.local
@@ -22,13 +25,10 @@ pnpm-debug.log*
 *.sln
 *.sw?
 
-#Electron-builder output
+# Electron-builder output
 /dist_electron
 /release
 
 # OS generated files
-node_modules/
-dist/
 build/
-release/
 *.exe

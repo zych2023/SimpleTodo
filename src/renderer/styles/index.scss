@@ -13,7 +13,7 @@
   --group-title: rgba(204, 204, 204, 0.8);
 }
 
-:root[data-theme="light"] {
+:root[data-theme='light'] {
   --app-bg: rgba(248, 250, 252, 0.8);
   --app-border-color: rgba(255, 255, 255, 0.24);
   --app-blur: 0px;
@@ -27,7 +27,7 @@
   --group-title: rgba(107, 114, 128, 0.75);
 }
 
-:root[data-theme="wallpaper"] {
+:root[data-theme='wallpaper'] {
   --app-bg: rgba(var(--acrylic-tint-rgb), 0.12);
   --app-border-color: rgba(255, 255, 255, 0.22);
   --app-blur: 72px;
@@ -48,53 +48,52 @@ body {
   background-color: transparent;
   overflow: hidden;
 }
+
+body {
+  position: relative;
+}
+
 * {
   padding: 0;
   margin: 0;
   color: var(--text-primary);
 }
+
 *::selection {
   background: var(--selection-bg);
 }
 
-.scrollbar-x::-webkit-scrollbar {
-  /*滚动条整体样式*/
-  width: 1px; /*高宽分别对应横竖滚动条的尺寸*/
-  height: 5px;
-}
 .scrollbar-y::-webkit-scrollbar {
-  /*滚动条整体样式*/
-  width: 5px; /*高宽分别对应横竖滚动条的尺寸*/
+  width: 5px;
   height: 1px;
 }
+
 .scrollbar::-webkit-scrollbar-thumb {
-  /*滚动条里面小方块*/
   display: none;
   border-radius: 5px;
   background-color: var(--scroll-thumb);
 }
+
 .scrollbar::-webkit-scrollbar-track {
   display: none;
 }
 
-/* fade */
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.28s;
 }
 
-.fade-enter,
-.fade-leave-active {
+.fade-enter-from,
+.fade-leave-to {
   opacity: 0;
 }
 
-/* fade-transform */
 .fade-transform-leave-active,
 .fade-transform-enter-active {
   transition: all 0.28s;
 }
 
-.fade-transform-enter {
+.fade-transform-enter-from {
   opacity: 0;
   transform: translateY(30px);
 }
