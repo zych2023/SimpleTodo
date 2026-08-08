@@ -1,93 +1,93 @@
-[English](README.md) | [中文](README_CN.md)
+[English](README_EN.md) | [中文](README.md)
 
 ---
 
 # SimpleTodo
 
-A lightweight desktop todo list application for Windows, built with Electron + Vue 3.
+轻量级 Windows 桌面待办清单应用，基于 Electron + Vue 3 构建。
 
-Based on [xhznl-todo-list](https://github.com/xiajingren/xhznl-todo-list), redesigned and enhanced.
+基于 [xhznl-todo-list](https://github.com/xiajingren/xhznl-todo-list) 二次开发与增强。
 
-## Features
+## 功能特性
 
-- **Todo Management**: Click the empty area to add a todo; double-click to mark as done; single-click to edit; drag to reorder.
-- **Done Archive**: Completed items are grouped by date with options to restore or delete.
-- **Window Pin Modes**: Two window behaviors:
-  - **Top Mode**: Window floats above all other applications (screen-saver level).
-  - **Desktop Mode**: Window sits at normal z-order like a desktop icon. Uses Win32 owner-window technique to resist being hidden by Show Desktop or Win+D, without requiring always-on-top.
-- **Theme Switching**: Light, dark, and wallpaper-acrylic themes with CSS backdrop-filter effects.
-- **Custom Motto**: Editable personal motto displayed in the title bar area.
-- **Data Export**: Export todo and done lists to Excel (.xlsx) format.
-- **Local Storage**: All data stored locally via IndexedDB and electron-store. No network required.
-- **System Tray**: Minimizes to system tray; supports auto-start on login.
-- **Window State Persistence**: Remembers window position, size, and mode across restarts.
-- **Firework Effect**: Celebratory particle effect when completing a todo.
+- **待办管理**：点击空白处添加待办，双击完成，单击编辑，长按拖拽排序。
+- **完成归档**：已完成事项按日期分组展示，支持恢复和删除。
+- **窗口模式**：两种窗口行为——
+  - **置顶模式**：窗口悬浮在所有应用之上（screen-saver 级别）。
+  - **桌面模式**：窗口处于普通层级，像桌面图标一样停留在桌面上。通过 Win32 属主窗口技术（owner-window）避免被 Show Desktop 或 Win+D 隐藏，无需强制置顶。
+- **主题切换**：浅色、深色、壁纸亚克力三种主题，基于 CSS backdrop-filter 实现。
+- **自定义座右铭**：标题栏可编辑个人谏言。
+- **数据导出**：支持导出待办和已完成清单为 Excel (.xlsx) 格式。
+- **本地存储**：所有数据通过 IndexedDB 和 electron-store 本地保存，无需联网。
+- **系统托盘**：支持最小化到托盘，支持开机自启。
+- **窗口状态记忆**：位置、大小、模式跨重启保持。
+- **烟花特效**：完成待办时的庆祝粒子效果。
 
-## Tech Stack
+## 技术栈
 
-| Layer | Technology |
-|-------|-----------|
-| Framework | Electron 33 + Vue 3 (Composition API) |
-| Language | TypeScript |
-| Build | electron-vite |
-| Styling | SCSS with CSS custom properties |
-| Storage | electron-store (main), IndexedDB (renderer) |
-| Desktop Integration | Win32 API via PowerShell (owner-window embedding) |
+| 层级 | 技术 |
+|------|------|
+| 框架 | Electron 33 + Vue 3 (Composition API) |
+| 语言 | TypeScript |
+| 构建 | electron-vite |
+| 样式 | SCSS + CSS 自定义属性 |
+| 存储 | electron-store (主进程), IndexedDB (渲染进程) |
+| 桌面集成 | PowerShell 调用 Win32 API (属主窗口嵌入) |
 
-## Development
+## 开发
 
 ```bash
-# Install dependencies
+# 安装依赖
 npm install
 
-# Start dev server with hot reload
+# 启动开发服务（热重载）
 npm run dev
 
-# Type check
+# 类型检查
 npm run typecheck
 
-# Lint
+# 代码检查
 npm run lint
 ```
 
-## Build
+## 构建
 
 ```bash
-# Build Windows installer (NSIS, x64)
+# 构建 Windows 安装包 (NSIS, x64)
 npm run electron:build:win
 ```
 
-The installer will be output to the `release/` directory.
+安装包输出到 `release/` 目录。
 
 > [!TIP]
-> On first launch, the app registers itself to auto-start on login. You can toggle this in the system tray menu.
+> 首次启动后应用会自动注册开机自启。可在系统托盘菜单中切换此设置。
 
-## Usage
+## 使用说明
 
-1. Download the installer from the [Releases](https://github.com/zych2023/SimpleTodo/releases) page.
-2. Install and launch. The window will appear in the top-right corner of the primary display.
-3. Use the toolbar buttons to switch between top/desktop pin modes, toggle themes, export data, and lock the window position.
-4. Right-click the system tray icon for startup preferences and other options.
+1. 从 [Releases](https://github.com/zych2023/SimpleTodo/releases) 页面下载安装包。
+2. 安装并启动，窗口将显示在主屏幕右上角。
+3. 使用工具栏按钮切换置顶/桌面模式、主题、导出数据、锁定窗口位置。
+4. 右键系统托盘图标可设置开机启动等选项。
 
-## Changelog
+## 更新日志
 
 ### v1.0.0 (2026-08)
 
-- Migrated from Vue CLI to electron-vite with full TypeScript support.
-- Simplified window pin modes from three to two: Top and Desktop.
-- Desktop mode now uses Win32 owner-window embedding to stay on the desktop without being hidden by Show Desktop or Win+D.
-- Removed third-party theme dependency; themes are now implemented with CSS custom properties.
-- Improved window initialization: default to top mode with instant startup.
-- Fixed type errors in tray login-item settings.
-- Cleaned up redundant hooks and legacy code paths.
+- 从 Vue CLI 迁移至 electron-vite，全面 TypeScript 化。
+- 窗口模式从三种简化为两种：置顶和桌面。
+- 桌面模式通过 Win32 属主窗口嵌入，实现在桌面上不被 Show Desktop / Win+D 隐藏。
+- 移除第三方主题依赖，改用 CSS 自定义属性实现主题。
+- 优化窗口初始化：默认为置顶模式，即时启动。
+- 修复托盘登录项设置的类型错误。
+- 清理冗余钩子和遗留代码路径。
 
-## Credits
+## 致谢
 
-- Original author: [xiajingren](https://github.com/xiajingren) ([xhznl-todo-list](https://github.com/xiajingren/xhznl-todo-list))
-- Maintainer: [zych2023](https://github.com/zych2023)
+- 原作者：[xiajingren](https://github.com/xiajingren) ([xhznl-todo-list](https://github.com/xiajingren/xhznl-todo-list))
+- 维护者：[zych2023](https://github.com/zych2023)
 
-## License
+## 许可
 
 > [!NOTE]
-> This project is for personal learning and non-commercial use. See the original project for license details.
+> 本项目仅供个人学习和非商业用途。许可详情请参阅原始项目。
 
